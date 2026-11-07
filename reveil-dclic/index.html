@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Réveil · DCLIC HLM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pictogrammes réutilisés dans la carte et les panneaux -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="ico-constat" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+      <symbol id="ico-temoignage" viewBox="0 0 24 24"><path d="M3 4h18v12H9l-5 4v-4H3z"/></symbol>
+      <symbol id="ico-realisation" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.6 1.6L9 19.4 21 7.4l-1.6-1.6z"/></symbol>
+      <symbol id="ico-micro" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="stage">
+    <!-- Écran d'attente -->
+    <section id="accueil" class="layer"></section>
+
+    <!-- Partie 1 : le clip -->
+    <section id="clip" class="layer">
+      <div id="clip-fond"></div>
+      <div id="clip-arcs"></div>
+      <div id="scene"></div>
+      <div id="barre"></div>
+    </section>
+
+    <!-- Partie 2 : la carte interactive -->
+    <section id="carte" class="layer">
+      <div id="carte-arcs"></div>
+      <div id="plan">
+        <div id="plan-titre"></div>
+        <!-- Carte SCHÉMATIQUE : les zones sont générées depuis quartiers.js -->
+        <svg id="map" viewBox="0 0 1000 600">
+          <defs><clipPath id="clip-commune"></clipPath></defs>
+          <g id="g-zones"></g>
+          <g id="g-sous"></g>
+          <g id="g-labels"></g>
+          <g id="g-sur"></g>
+        </svg>
+        <div id="plan-note"></div>
+      </div>
+      <div id="panel"></div>
+      <div id="cloture"></div>
+      <div id="compteur"></div>
+    </section>
+
+    <div id="logo-coin"></div>
+    <div id="sweep"></div>
+    <div id="pause-ind"><span></span><span></span> PAUSE</div>
+    <div id="aide"></div>
+  </div>
+
+  <script src="contenu.js"></script>
+  <script src="quartiers.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
